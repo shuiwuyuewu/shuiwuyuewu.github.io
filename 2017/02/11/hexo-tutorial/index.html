@@ -12,12 +12,12 @@
 
 
 
-  <meta name="description" content="搭建MPC-HC开发环境。"/>
+  <meta name="description" content="Hexo的简易教程。用于将这两天折腾Hexo的心得记录下来。"/>
 
 
 
 
-  <meta name="keywords" content="MPC-HC," />
+  <meta name="keywords" content="Hexo," />
 
 
 
@@ -31,19 +31,19 @@
 
 
 
-<link rel="canonical" href="https://shuiwuyuewu.github.io/2017/02/10/mpc-hc-build-env/"/>
+<link rel="canonical" href="https://shuiwuyuewu.github.io/2017/02/11/hexo-tutorial/"/>
 
 
-<meta name="description" content="搭建MPC-HC开发环境。">
+<meta name="description" content="Hexo的简易教程。用于将这两天折腾Hexo的心得记录下来。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MPC-HC开发环境搭建">
-<meta property="og:url" content="https://shuiwuyuewu.github.io/2017/02/10/mpc-hc-build-env/index.html">
+<meta property="og:title" content="Hexo简易教程">
+<meta property="og:url" content="https://shuiwuyuewu.github.io/2017/02/11/hexo-tutorial/index.html">
 <meta property="og:site_name" content="Shuiwuyuewu's blog">
-<meta property="og:description" content="搭建MPC-HC开发环境。">
-<meta property="og:updated_time" content="2017-02-11T06:35:03.531Z">
+<meta property="og:description" content="Hexo的简易教程。用于将这两天折腾Hexo的心得记录下来。">
+<meta property="og:updated_time" content="2017-02-12T03:09:09.316Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MPC-HC开发环境搭建">
-<meta name="twitter:description" content="搭建MPC-HC开发环境。">
+<meta name="twitter:title" content="Hexo简易教程">
+<meta name="twitter:description" content="Hexo的简易教程。用于将这两天折腾Hexo的心得记录下来。">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
@@ -80,7 +80,7 @@
 
 
 
-    <title> MPC-HC开发环境搭建 · Shuiwuyuewu's blog </title>
+    <title> Hexo简易教程 · Shuiwuyuewu's blog </title>
   </head>
 
   <body>
@@ -165,31 +165,71 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          MPC-HC开发环境搭建
+          Hexo简易教程
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          Feb 10, 2017
+          Feb 11, 2017
         </span>
       </div>
     </header>
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#建站"><span class="toc-text">建站</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#新建博文"><span class="toc-text">新建博文</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#编写博文"><span class="toc-text">编写博文</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试博文效果"><span class="toc-text">测试博文效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#发布"><span class="toc-text">发布</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常见问题"><span class="toc-text">常见问题</span></a></li></ol>
+    </div>
+  </div>
+
 
     <div class="post-content">
       
-        <p>搭建的具体步骤：</p>
-<ol>
-<li>安装Visual Studio 2015;</li>
-<li>安装<a href="https://pan.baidu.com/s/1bp5UgLx" target="_blank" rel="external">DirectX SDK (June 2010)</a>;</li>
-<li>安装GCC环境，下载<a href="https://pan.baidu.com/s/1kV7FAXT" target="_blank" rel="external">MSYS/MinGW包</a>，解压到“C:\MSYS”;</li>
-<li>下载<a href="https://pan.baidu.com/s/1ge2hTpL" target="_blank" rel="external">MPC-HC代码</a>，解压到“C:\mpc-hc”;</li>
-<li>可选。安装GIT到”C:\Program Files\Git”目录下；不安装时，请删除”C:\mpc-hc\build.user.bat”文件中<code>SET &quot;MPCHC_GIT=C:\Program Files\Git&quot;</code>行；</li>
-<li>可选。安装Python到”C:\Python27”目录下；不安装时，请删除”C:\mpc-hc\build.user.bat”文件中<code>SET &quot;MPCHC_PYTHON=C:\Python27&quot;</code>行；</li>
-<li>打开”C:\mpc-hc\mpc-hc.sln”，进行编译即可。</li>
+        <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><ol>
+<li>安装<a href="https://nodejs.org" target="_blank" rel="external">nodejs</a>,要添加到系统变量<strong>PATH</strong>中。</li>
+<li>安装<a href="https://git-scm.com" target="_blank" rel="external">Git</a>。</li>
+<li>安装<strong>Hexo</strong>。<pre><code>npm install -g hexo-cli
+</code></pre></li>
+</ol>
+<h1 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h1><p>在命令行中输入下列命令：</p>
+<pre><code>// 初始化
+hexo init &lt;folder&gt;
+// 切换目录    
+cd &lt;folder&gt;
+// 安装依赖包
+npm install
+</code></pre><p>执行成功后会生成如下文件：</p>
+<pre><code>.
+|--_config.yml  配置文件
+|--package.json 应用程序信息。包含了依赖包列表
+|--scaffolds    模板文件所在目录
+|--source       源文件目录
+|--+--_drafts   草稿目录
+|--+--_posts    博文目录
+|--themes       主题目录
+</code></pre><h1 id="新建博文"><a href="#新建博文" class="headerlink" title="新建博文"></a>新建博文</h1><p>在命令行中输入下列命令：</p>
+<pre><code>hexo new &lt;tiltle&gt;
+</code></pre><p>执行成功,会根据模板在<code>source\_posts</code>目录下生成<code>&lt;title&gt;.md</code>博文文件。</p>
+<h1 id="编写博文"><a href="#编写博文" class="headerlink" title="编写博文"></a>编写博文</h1><p>打开博文文件进行文本编辑即可。</p>
+<h1 id="测试博文效果"><a href="#测试博文效果" class="headerlink" title="测试博文效果"></a>测试博文效果</h1><p>在命令行中输入下列命令：</p>
+<pre><code>hexo server
+</code></pre><p>执行成功，会启动一个可检测文件变动的本地服务器。一般用来测试博文效果。修改博文后，只需刷新浏览器页面<code>http://localhost:4000/</code>，即可看到最新状态的博文。</p>
+<h1 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h1><p>在命令行中输入下列命令：</p>
+<pre><code>hexo d -g
+</code></pre><h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><ol>
+<li><p>npm安装依赖包失败。<br>改用cnpm安装依赖包。执行参数不变。</p>
+</li>
+<li><p>安装自定义主题。<br>根据主题的安装步骤执行即可。例如<a href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="external">even主题</a></p>
+</li>
+<li><p>git发布失败，认证失败。<br>ssh的key需要没有密码的。详细教程参见<a href="http://www.cnblogs.com/zhvon/p/5354483.html" target="_blank" rel="external">hexo+github部署</a></p>
+</li>
+<li><p>npm换源。<br>详细教程参见<a href="http://www.jianshu.com/p/0deb70e6f395" target="_blank" rel="external">npm换源</a></p>
+</li>
+<li><p>配置文件的配置。<br>详细教程参见<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">配置</a></p>
+</li>
 </ol>
 
       
@@ -210,7 +250,7 @@
     </p>
     <p class="copyright-item">
       <span>链接: </span>
-      <a href="https://shuiwuyuewu.github.io/2017/02/10/mpc-hc-build-env/">https://shuiwuyuewu.github.io/2017/02/10/mpc-hc-build-env/</a>
+      <a href="https://shuiwuyuewu.github.io/2017/02/11/hexo-tutorial/">https://shuiwuyuewu.github.io/2017/02/11/hexo-tutorial/</a>
     </p>
 
     <p class="copyright-item lincese">
@@ -229,7 +269,7 @@
       <footer class="post-footer">
         <div class="post-tags">
           
-            <a href="/tags/MPC-HC/">MPC-HC</a>
+            <a href="/tags/Hexo/">Hexo</a>
           
         </div>
 
@@ -237,15 +277,9 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2017/02/11/hexo-tutorial/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">Hexo简易教程</span>
-        <span class="prev-text nav-mobile">Prev</span>
-      </a>
     
-    
-      <a class="next" href="/2017/02/06/mpc-hc-distrib/">
-        <span class="next-text nav-default">MPC-HC程序的安装包分析</span>
+      <a class="next" href="/2017/02/10/mpc-hc-build-env/">
+        <span class="next-text nav-default">MPC-HC开发环境搭建</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
