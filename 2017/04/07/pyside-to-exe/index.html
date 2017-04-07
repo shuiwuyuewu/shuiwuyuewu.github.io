@@ -12,10 +12,12 @@
 
 
 
-  <meta name="description" content="shuiwuyuewu个人博客"/>
+  <meta name="description" content="将使用PySide的Python程序转换为windows可运行的exe程序"/>
 
 
 
+
+  <meta name="keywords" content="Python Pyside exe," />
 
 
 
@@ -29,18 +31,21 @@
 
 
 
-<link rel="canonical" href="https://shuiwuyuewu.github.io/"/>
+<link rel="canonical" href="https://shuiwuyuewu.github.io/2017/04/07/pyside-to-exe/"/>
 
 
-<meta name="description" content="shuiwuyuewu个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Shuiwuyuewu's blog">
-<meta property="og:url" content="https://shuiwuyuewu.github.io/index.html">
+<meta name="description" content="将使用PySide的Python程序转换为windows可运行的exe程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python程序发布">
+<meta property="og:url" content="https://shuiwuyuewu.github.io/2017/04/07/pyside-to-exe/index.html">
 <meta property="og:site_name" content="Shuiwuyuewu's blog">
-<meta property="og:description" content="shuiwuyuewu个人博客">
+<meta property="og:description" content="将使用PySide的Python程序转换为windows可运行的exe程序">
+<meta property="og:image" content="https://shuiwuyuewu.github.io/images/libeay32-wrong.png">
+<meta property="og:updated_time" content="2017-04-07T14:45:31.450Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shuiwuyuewu's blog">
-<meta name="twitter:description" content="shuiwuyuewu个人博客">
+<meta name="twitter:title" content="Python程序发布">
+<meta name="twitter:description" content="将使用PySide的Python程序转换为windows可运行的exe程序">
+<meta name="twitter:image" content="https://shuiwuyuewu.github.io/images/libeay32-wrong.png">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
@@ -77,7 +82,7 @@
 
 
 
-    <title> Shuiwuyuewu's blog </title>
+    <title> Python程序发布 · Shuiwuyuewu's blog </title>
   </head>
 
   <body>
@@ -157,14 +162,12 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  <section id="posts" class="posts">
-    
-      
+  
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2017/04/07/pyside-to-exe/">Python程序发布</a>
+          Python程序发布
         
       </h1>
 
@@ -177,163 +180,109 @@
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#方法一：cxfreeze"><span class="toc-text">方法一：cxfreeze</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#方法二：py2exe"><span class="toc-text">方法二：py2exe</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#FAQ"><span class="toc-text">FAQ</span></a></li></ol>
+    </div>
+  </div>
+
 
     <div class="post-content">
       
-        
-        
-          
-        
+        <h1 id="方法一：cxfreeze"><a href="#方法一：cxfreeze" class="headerlink" title="方法一：cxfreeze"></a>方法一：cxfreeze</h1><ol>
+<li><p>执行如下命令：</p>
+<pre><code>python C:\Python27\Scripts\cxfreeze main.py --target-dir dist --base-name Win32GUI --include-modules atexit
+</code></pre></li>
+</ol>
+<h1 id="方法二：py2exe"><a href="#方法二：py2exe" class="headerlink" title="方法二：py2exe"></a>方法二：py2exe</h1><ol>
+<li><p>编写<code>setup.py</code></p>
+<pre><code>from distutils.core import setup
+import py2exe
 
-        
-          将使用PySide的Python程序转换为windows可运行的exe程序
-          <div class="read-more">
-            <a href="/2017/04/07/pyside-to-exe/" class="read-more-link">Read more..</a>
-          </div>
-        
+options = { &apos;py2exe&apos;: { &apos;dll_excludes&apos;:[&apos;w9xpopen.exe&apos;]}}
+
+setup(options = options, windows = [{&apos;script&apos;:&apos;main.py&apos;}])
+</code></pre></li>
+<li><p>执行如下命令：</p>
+<pre><code>python setup.py py2exe
+</code></pre></li>
+</ol>
+<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><ol>
+<li><p>cxfreeze启动程序时提示错误。</p>
+<p> <img src="/images/libeay32-wrong.png" alt=""></p>
+<p> 将<code>dist\PySide\openssl</code>下的dll都复制到dist下即可。</p>
+</li>
+<li><p>py2exe提示缺少<code>msvcp90.dll</code>文件。</p>
+<p> 将<code>msvcp90.dll</code>文件复制到setup.py所在目录即可。</p>
+</li>
+</ol>
+
       
     </div>
 
     
-
-    
-  </article>
-
-    
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/02/11/hexo-tutorial/">Hexo简易教程</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Feb 11, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
       
-        
-        
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>作者: </span>
+      <span>shuiwuyuewu</span>
+    </p>
+    <p class="copyright-item">
+      <span>来源: </span>
+      <a href="https://shuiwuyuewu.github.io">https://shuiwuyuewu.github.io</a>
+    </p>
+    <p class="copyright-item">
+      <span>链接: </span>
+      <a href="https://shuiwuyuewu.github.io/2017/04/07/pyside-to-exe/">https://shuiwuyuewu.github.io/2017/04/07/pyside-to-exe/</a>
+    </p>
+
+    <p class="copyright-item lincese">
+      
+      本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
           
-        
-
-        
-          Hexo的简易教程。用于将这两天折腾Hexo的心得记录下来。
-          <div class="read-more">
-            <a href="/2017/02/11/hexo-tutorial/" class="read-more-link">Read more..</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/02/10/mpc-hc-build-env/">MPC-HC开发环境搭建</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Feb 10, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
+            <a href="/tags/Python-Pyside-exe/">Python Pyside exe</a>
           
-        
+        </div>
 
         
-          搭建MPC-HC开发环境。
-          <div class="read-more">
-            <a href="/2017/02/10/mpc-hc-build-env/" class="read-more-link">Read more..</a>
-          </div>
         
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/02/06/mpc-hc-distrib/">MPC-HC程序的安装包分析</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Feb 6, 2017
-        </span>
-      </div>
-    </header>
-
+  <nav class="post-nav">
     
     
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          分析MPC-HC程序的安装包代码。
-          <div class="read-more">
-            <a href="/2017/02/06/mpc-hc-distrib/" class="read-more-link">Read more..</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    
+      <a class="next" href="/2017/02/11/hexo-tutorial/">
+        <span class="next-text nav-default">Hexo简易教程</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 
+      </footer>
+    
+  </article>
+
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
         </div>  
       </main>
 
